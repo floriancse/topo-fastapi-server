@@ -180,7 +180,7 @@ def calculate_clc_percentage(wkt: str) -> list:
             return cursor.fetchall()
 
 
-@app.post("/geom")
+@app.post("/GeoProfile")
 async def process_linestring(request: Request) -> dict:
     data = await request.json()
     wkt = f"LINESTRING({', '.join(f'{coord[0]} {coord[1]}' for coord in data['coords'])})"
