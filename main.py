@@ -46,7 +46,7 @@ def fetch_elevation_data(wkt: str) -> list:
                     ) AS VALUE,
                     ST_ASGEOJSON (D.GEOM) AS COORDS
                 FROM
-                    GEO_BDR_MNT  R,
+                    GEO_MNT_FRANCE R,
                     ST_DUMPPOINTS (
                         ST_LINEINTERPOLATEPOINTS (ST_GEOMFROMTEXT (%s, 3857), 0.01)
                     ) AS D (PATH, GEOM)
